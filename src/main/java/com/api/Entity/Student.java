@@ -1,5 +1,7 @@
 package com.api.Entity;
 
+import org.hibernate.internal.build.AllowSysOut;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -17,9 +19,7 @@ public class Student {
 	private String city;
 	
 	
-	
-	
-	
+
 	
 	
 	public int getId() {
