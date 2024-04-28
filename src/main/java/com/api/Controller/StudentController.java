@@ -12,27 +12,29 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.api.Entity.Student;
-import com.api.Service.StudentServiceImpl;
+import com.api.Service.StudentService;
+
 
 @RestController
 @RequestMapping("/student")
 public class StudentController {
 	
 	@Autowired
-	private StudentServiceImpl studentServiceImpl;
+	private StudentService studentService;
 	
 	
 	@PostMapping("/add")
 	public String saveStudent(Student student)
 	{
+		System.out.println("student-->"+student);
 		
-		studentServiceImpl.saveStudent(student); 
+		studentService.saveStudent(student); 
 		return "Student is Added";
 	}
 	
 	@GetMapping("/get")
 	public List<Student> getAllStudent(Student student)
 	{ 
-		return studentServiceImpl.getAllStudent() ;
+		return studentService.getAllStudent() ;
 	}
 }
